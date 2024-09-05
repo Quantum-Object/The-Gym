@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/quantumobject/Documents/GitHub/The-Gym",
-      "program": "/Users/quantumobject/Documents/GitHub/The-Gym/build/Debug/outDebug"
+      "cwd": "/Users/quantumobject/Desktop/The-Gym",
+      "program": "/Users/quantumobject/Desktop/The-Gym/build/Debug/outDebug"
     }
   ]
 }

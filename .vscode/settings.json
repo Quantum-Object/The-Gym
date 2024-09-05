@@ -57,6 +57,9 @@
   "C_Cpp_Runner.useLinkTimeOptimization": true,
   "files.associations": {
     "*.pl": "prolog",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp"
   }
 }
