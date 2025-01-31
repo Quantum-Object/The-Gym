@@ -1,42 +1,6 @@
 
-
-
-
-
-Select *
-FROM Employee E
-INNER JOIN Company C ON  E.company_id=C.company_id ;
-
-select * from country;
-select * from employee;
-select * from Company;
-select * FROM Company_Country;
-
-
-
-Select E.name,C.name
-FROM Employee E
-INNER JOIN Employee C ON  E.employee_id<>C.employee_id;
-
-
-SELECT DISTINCT C.name FROM(
-    employee E INNER JOIN company C ON  E.company_id=C.company_id and  E.age>23 
-) 
-
-select * from Company;
-select * FROM Company_Country;
-select * from country;
-SELECT B.name,C.name FROM (
-    Company_Country A INNER  JOIN company B ON  A.company_id=B.company_id ) INNER JOIN country C ON C.country_id=B.company_id 
-    ;
-
-SELECT  C.name,COUNT(E.employee_id) FROM(
-    employee E INNER JOIN company C ON  E.company_id=C.company_id 
-) GROUP BY c.name having COUNT(E.employee_id)>2;
-
-
 CREATE TABLE Company
-(company_id INT PRIMARY KEY, 
+(company_id INT PRIMARY KEY IDENTITY, 
 name VARCHAR(20), 
 field VARCHAR(20)
 )

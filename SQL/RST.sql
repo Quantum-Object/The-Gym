@@ -1,0 +1,17 @@
+CREATE TABLE R(
+    A INT,
+    B INT
+);
+CREATE TABLE S(
+    B INT,
+    C INT
+);
+CREATE TABLE T(
+    A INT,
+    C INT
+);
+
+INSERT INTO R VALUES(1,2),(3,2),(5,6),(7,8),(9,8);
+INSERT INTO S VALUES(6,2),(2,4),(8,1),(8,3),(2,5);
+INSERT INTO T VALUES(7,1),(1,2),(9,3),(5,4),(3,5);
+
