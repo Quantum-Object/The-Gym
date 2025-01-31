@@ -60,6 +60,30 @@
     "iostream": "cpp",
     "set": "cpp",
     "unordered_set": "cpp",
-    "vector": "cpp"
-  }
+    "vector": "cpp",
+    "cmath": "cpp",
+    "__bit_reference": "cpp",
+    "array": "cpp",
+    "ios": "cpp",
+    "algorithm": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp"
+  },
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "DB",
+      "database": "TestDB",
+      "username": "root",
+      "password": "442004ah"
+    }
+  ],
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

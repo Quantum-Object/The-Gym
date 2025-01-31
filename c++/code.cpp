@@ -1,59 +1,61 @@
 #include <iostream>
-#include<cmath>
-#include <algorithm>
 #include <vector>
-#include <set>
+#include <algorithm>
+#include <cmath>
 #include <map>
 using ll=long long;
 using namespace std;
 int MOD = 1e9+7;
 
-ll factorial(int n){
-    ll s=1;
-    for (int i=0;i<n;i++) s*=i+1;
+int sd(int n){
+    int s=0; 
+    while (n>0){
+        s+=n%10;
+        n/=10;
+    }
     return s;
+};
+
+ll qSlove(int b, ll c){
+    double x=-b+sqrt(b*b-4*c);
+    x/=2;
+    if ((ll) x == x)
+        return (ll) x;
+    return -1;
 }
 
-void printVec(vector<int> a){
-    for (int i=0;i<a.size();i++){
-    cout << a[i]<< " ";}
-    cout << endl;
-}
 
 int main() {
     int t;
-    cin>> t;
-    while (t-->0){
-        int n,m;
-        cin>> n >> m;
-        vector<int> x(n);
-        int a,b;
-        fill(x.begin(),x.end(),n);
-        for (int i=0;i<m;i++){
-            cin >> a >> b ;
-            if (a>b)
-                x[b-1]=min(a-1,x[b-1]);
-            else 
-                x[a-1]=min(b-1,x[a-1]);
+    cin >> t;
+    int n,k;
+    while(t-->0){
+        cin >> n >> k;
+        vector<int> a(n);
+        for (int i=0;i<n;i++)cin>>a[i];
+        map<ll,int> x;
+        for (int i=0;i<n;i++){
+            ll m=i*(n-1-i)+n-1;
+            if (x.count(m))
+                x[m]=1;
+            else x[m]++;
         }
-        long s=0;
-        int c=x[n-1];
-        for(int i=n-1;i>=0;i--){
-            c=min(x[i],c);
-            s+=c-i;
+        for (int i=1;i<n;i++){
+            ll m=(i*(n-i));
+            if (x.count(m))
+                x[m]=((a[i]-a[i-1]));
+            else x[m]+=(ll(a[i]-a[i-1]));
         }
-        
-        cout << s << endl;
-        
-
+        int c;
+        while (k-->0){
+            cin >> c;
+            cout << x[c] <<" ";
+        }
+        cout << endl;
     }
-    return 0;
+   
     }
-
-
-    // 1 |2 |3
-     // 1+1+1+2=5 <1,2,3>---> 3 + 2 +1 
-     // 1 2 3
+    
 
 
 
