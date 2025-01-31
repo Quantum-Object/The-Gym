@@ -11,7 +11,7 @@ ll MOD=1e9+7;
 
 ll ks(int n,int W,vector<int> &w,vector<int> &v){
 
-    vector<vector<ll>> dp(n+1,vector<ll>(W+1,0));
+    vector<vector<ll> > dp(n+1,vector<ll>(W+1,0));
 
 
     for (int i=1;i<=n;i++){
@@ -20,8 +20,11 @@ ll ks(int n,int W,vector<int> &w,vector<int> &v){
                 dp[i][j]=max(dp[i-1][j],dp[i-1][j-w[i-1]]+v[i-1]);
             else
                 dp[i][j]=dp[i-1][j];
+            cout << dp[i][j] << " ";
         }
+        cout << endl;
     }
+
     return dp[n][W];
 }
 
@@ -31,10 +34,7 @@ int main(){
     vector<int> w(n);
     vector<int> v(n);
     for (int i=0;i<n;i++)
-        cin >> w[i];
-    for (int i=0;i<n;i++)
-        cin >> v[i];
-
+        cin >> w[i] >> v[i];
     cout << ks(n,W,w,v) << endl;
     return 0;
 }
